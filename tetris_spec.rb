@@ -63,24 +63,6 @@ describe Tetris, "#moveleft" do
      [0, 1, 1, 0],
      [0, 0, 0, 0]]
     final_tab= [
-         [0, 1, 0, 0],
-         [0, 1, 0, 0],
-         [1, 1, 0, 0],
-         [0, 0, 0, 0]]
-    tetris = Tetris.new
-    tetris.moveright(init_tab).should eq(final_tab)
-    
-  end
-end
-
-describe Tetris, "#moveleft" do
-  it "returns OK" do
-    init_tab =[
-     [0, 0, 1, 0],
-     [0, 0, 1, 0],
-     [0, 1, 1, 0],
-     [0, 0, 0, 0]]
-    final_tab= [
          [0, 0, 0, 1],
          [0, 0, 0, 1],
          [0, 0, 1, 1],
@@ -107,16 +89,41 @@ end
 
 describe Tetris, "#islinefull" do
   it "returns OK if line is full" do
+    init_tab =[
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [1, 1, 1, 1],
+     [0, 0, 0, 0]]
+    tetris = Tetris.new
+    init_tab.isfull should eq(true)
     end
 end
 
 describe Tetris, "#purgeline" do
-  it "returns OK is line is purged" do
+  it "returns game board with purged lines" do
+    init_tab =[
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [1, 1, 1, 1],
+     [0, 0, 0, 0]]
+    final_tab =[
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0]]
+    tetris = Tetris.new
+    a.purge should eq(final_tab)
     end
 end
 
 describe Tetris, "#isgameover" do
   it "returns if game is finished or not" do
+    init_tab =[
+     [1, 1, 1, 1],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0]]
+     init_tab.islinefull should eq(true)
     end
 end
 
