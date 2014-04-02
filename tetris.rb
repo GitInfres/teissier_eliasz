@@ -1,13 +1,14 @@
 # tetris.rb
 class Tetris
-  def tourner90droite(tableau)
-	#myTab = Array.new(4) {|i| Array.new(4) {|j| 0} }
-  	final_tab = tableau.transpose.map(&:reverse)
-	print final_tab
-	return final_tab
-  end
-
-  def checkout
-    0
-  end
+	def tourner90droite(tab)
+		#puts tab
+		newTab=[[0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0]]
+		#puts newTab
+		for i in 0..3
+			for j in 0..3
+				newTab[i][j]=tab[3-j][i]
+			end
+		end
+		return newTab
+	end
 end
