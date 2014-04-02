@@ -92,16 +92,31 @@ end
 
 describe Tetris, "#movedown" do
   it "returns new position of tetra" do
+	
+    init_tab =[
+     [0, 0, 1, 0],
+     [0, 0, 1, 0],
+     [0, 1, 1, 0],
+     [0, 0, 0, 0]]
+    final_tab= [
+         [0, 0, 0, 0],
+         [0, 0, 1, 0],
+         [0, 0, 1, 0],
+         [0, 1, 1, 0]]
+    tetris = Tetris.new
+    tetris.movedown(init_tab).should eq(final_tab)
     end
 end
 
 describe Tetris, "#tetra_gen" do
   it "returns aleatoire tetra" do
-    end
-end
-
-describe Tetris, "#tetra_control" do
-  it "returns OK" do
+    init_tab =[
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0]]
+    tetris = Tetris.new
+    tetris.tetra_gen.should_not eq(init_tab)
     end
 end
 
