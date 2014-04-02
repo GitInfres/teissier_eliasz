@@ -63,9 +63,9 @@ describe Tetris, "#moveleft" do
      [0, 1, 1, 0],
      [0, 0, 0, 0]]
     final_tab= [
-         [0, 0, 0, 1],
-         [0, 0, 0, 1],
-         [0, 0, 1, 1],
+         [0, 1, 0, 0],
+         [0, 1, 0, 0],
+         [1, 1, 0, 0],
          [0, 0, 0, 0]]
     tetris = Tetris.new
     tetris.moveleft(init_tab).should eq(final_tab)
